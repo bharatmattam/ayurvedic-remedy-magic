@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,7 +13,6 @@ const Consultation = () => {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
-  // Redirect to login if not authenticated
   if (!isAuthenticated) {
     navigate("/login");
     return null;
@@ -31,10 +29,8 @@ const Consultation = () => {
     setIsSubmitting(true);
     
     try {
-      // In a real app, this would be an API call
       await new Promise(resolve => setTimeout(resolve, 1500));
       
-      // Mock response based on symptoms
       let response;
       const lowerSymptoms = symptoms.toLowerCase();
       
